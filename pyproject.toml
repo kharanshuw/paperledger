@@ -1,0 +1,30 @@
+[project]
+name = "paperledger"
+version = "0.1.0"
+description = "Self-hosted, audit-grade personal expense engine with automated PDF bank statement ingestion"
+requires-python = ">=3.14"
+dependencies = []
+
+[tool.uv.workspace]
+members = [
+    "packages/*",
+    "services/*",
+]
+
+[dependency-groups]
+dev = [
+    "httpx2>=2.16.0",
+    "pytest>=9.2.0",
+    "pytest-asyncio>=1.4.1.post1",
+]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "session"
+asyncio_default_test_loop_scope = "session"
+testpaths = ["services/core-api/tests"]
+pythonpath = ["services/core-api"]
+
