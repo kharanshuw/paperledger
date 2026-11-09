@@ -34,7 +34,7 @@ async def get_db() -> AsyncGenerator[AsyncSession, Any]:
         except Exception:
             await session.rollback()
             raise
-
+ 
 
 SessionDep = Annotated[AsyncSession, Depends(get_db)]
 

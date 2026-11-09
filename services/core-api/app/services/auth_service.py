@@ -1,4 +1,6 @@
-"""Authentication service coordinating registration, login, and tenant account provisioning."""
+"""Authentication service coordinating registration, login, and tenant account provisioning.
+services/core-api/app/services/auth_service.py
+"""
 
 from datetime import timedelta
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -13,7 +15,7 @@ from shared.models.account import Account
 from shared.models.user import User
 
 
-class AuthService:
+class AuthService: 
     """Service handling tenant registration and credential validation."""
 
     @staticmethod
